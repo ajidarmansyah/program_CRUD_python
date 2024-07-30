@@ -1,41 +1,32 @@
-# format data
-data_tamplate = {
-    "Nama" : "nama",
-    "Umur" : 0,
-    "Alamat" : "alamat",
-    "Telpon" : "000000000000"
-}
-# membuat menu
-# while True:
-#     print(5*"=","SELAMAT DATANG DI PROGRAM CRUD",5*"=")
-#     print("1. Input data")
-#     print("2. Membaca data")
-#     print("3. Merubah data")
-#     print("4. Menghapus data")
-#     pilihan = int(input("PILIH NOMOR UNTUK MEMULAI PROGRAM: "))
+import os
+import CRUD as CRUD
 
-#     if pilihan == 1:
-#         print("membuat data!")
-#         break
-#     if pilihan == 2:
-#         print("membaca data")
-#         break
-#     if pilihan == 3:
-#         print("merubah data")
-#         break
-#     if pilihan == 4:
-#         print("menghapus data")
-#         break
+if __name__ == "__main__":
+    sistem_operasi = os.name
+    while True:
+        match sistem_operasi:
+            case "posix" : os.system("clear")
+            case "nt" : os.system("cls")
+    
+        print("SELAMAT DATANG DI")
+        print("PROGRAM DATA BASE\n")
+        print("===================")
 
-data = dict.fromkeys(data_tamplate.keys())
-nama = input("nama: ")
-umur = int(input("umur: "))
-Alamat = input("alamat: ")
-Telpon = input("telpon: ")
-data["Nama"] = nama
-data["Umur"] = nama
-data["Alamat"] = nama
-data["Telpon"] = nama
+        print(f"1. Tampilkan Data")
+        print(f"2. Tambah Data")
+        print(f"3. Ubah Data")
+        print(f"4. Hapus Data\n")
 
-with open("data.txt", mode="w", encoding="utf-8") as file:
-    file.write(data)
+        user_option = int(input("Masukan Opsi: "))
+        print("\n===================\n")
+
+        match user_option:
+            case 1: print("tampilkan data")
+            case 2: print("tambah data")
+            case 3: print("ubah data")
+            case 4: print("hapus data")
+        
+        print("\n===================\n")
+        is_Lajut = input("Lanjut? (y/n): ")
+        if is_Lajut == "n" or is_Lajut == "N":
+            break
