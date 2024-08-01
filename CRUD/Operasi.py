@@ -21,4 +21,13 @@ def criate_first_data():
         with open(Database.DB_NAME, mode="w", encoding="utf-8") as file:
             file.write(data_str)
     except:
-        print("Gagal menambahkan data!")    
+        print("Gagal menambahkan data!")
+
+def read_data():
+    try:
+        with open(Database.DB_NAME, mode="r") as file:
+            content = file.readlines()
+            return content
+    except: 
+        print("Gagal membaca data!")
+        return False
