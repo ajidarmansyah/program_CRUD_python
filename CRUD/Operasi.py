@@ -6,7 +6,15 @@ def criate_first_data():
     
     penulis = input("Penulis: ")
     judul = input("Judul: ")
-    tahun = input("Tahun: ")
+    while True:            
+        try:
+            tahun = int(input("Tahun: "))
+            if len(str(tahun)) == 4:
+                break
+            else:
+                print("input tahun tidak boleh lebih dari 4 karakter")
+        except:
+            print("input tahun harus angka!")
     
     data = Database.TAMPLATE.copy()
     data["pk"] = random_string(6)
@@ -35,7 +43,18 @@ def read_data():
 def crate_data():
     penulis = input("Penulis: ")
     judul = input("Judul: ")
-    tahun = input("Tahun: ")
+
+    while True:            
+        try:
+            tahun = int(input("Tahun: "))
+
+            if len(str(tahun)) == 4:
+                break
+            else:
+                print("input tahun tidak boleh lebih dari 4 karakter")
+        except:
+            print("input tahun harus angka!")
+
     
     data = Database.TAMPLATE.copy()
     data["pk"] = random_string(6)

@@ -32,7 +32,7 @@ if __name__ == "__main__":
 
         match user_option:
             case 1: CRUD.read_console()
-            case 2: CRUD.crate_data()
+            case 2: CRUD.criate_console()
             case 3: print("ubah data")
             case 4: print("hapus data")
         

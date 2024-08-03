@@ -25,3 +25,11 @@ def read_console():
 
     # FOOTER
     print("\n"+"="*100)
+
+def criate_console():
+    print("SILAHKAN MASUKAN DATA")
+    print("======================")
+    Operasi.crate_data()
+    print("\nData Baru Anda")
+    print("-"*100)
+    read_console()
